@@ -15,23 +15,15 @@ const getCompareList = (c: CompareType) => {
 }
 
 interface IProps {
-    comparorType: CompareType
     className?: string;
-    selectedComparor: string;
-    handleComparorChange: (e: React.FormEvent<HTMLSelectElement>) => void;
+    selectedValue: string | number;
+    handleSelectedValueChange: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
 export const Condition: React.SFC<IProps> = props => {
-    const { comparorType, className, selectedComparor, handleComparorChange } = props;
-    let compareList = getCompareList(comparorType);
-    console.log(selectedComparor);
+    const { className, selectedValue, handleSelectedValueChange } = props;
     return (
-        <select className={`${className} h-10 w-32 bg-grey-light`} value={selectedComparor} onChange={handleComparorChange}>
-            <option label=" "></option>
-            {compareList.map(s => {
-                return <option key={s}>{s}</option>
-            })}
-        </select>
+        <input className={`${className} h-10 w-32 bg-grey-light`} value={selectedValue} onChange={handleSelectedValueChange} />
     )
 }
 
