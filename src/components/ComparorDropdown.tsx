@@ -28,7 +28,7 @@ export const ComparorDropdown: React.SFC<IProps> = props => {
   let compareList = getCompareList(comparorType);
   return (
     <select
-      className={`${className} h-10 w-32 bg-grey-light text-grey-darkest rounded-sm border border-grey`}
+      className={`${className} h-10 w-32 bg-grey-lighter text-grey-darkest rounded-sm border border-grey`}
       value={selectedComparor}
       onChange={handleComparorChange}
     >

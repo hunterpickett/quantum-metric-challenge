@@ -28,7 +28,7 @@ export const getSql = (conditions: any[]) => {
 
 interface ICondition {
   column: string;
-  conditionType: string;
+  comparor: string;
   condition1: string | number;
   condition2: string | number;
 }
@@ -45,9 +45,9 @@ const columnMap: { [key: string]: string } = {
   'Page Path': 'path'
 };
 
-const getWhereClause = ({ column, conditionType, condition1, condition2 }: ICondition) => {
+const getWhereClause = ({ column, comparor, condition1, condition2 }: ICondition) => {
   let sqlColumn = columnMap[column];
-  switch (conditionType) {
+  switch (comparor) {
     case 'greater than':
       return `${sqlColumn} > ${condition1}`;
     case 'less than':

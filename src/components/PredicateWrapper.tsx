@@ -15,7 +15,7 @@ const defaultCondition: any = () => {
   return {
     id: new Date().toISOString(),
     column: 'User Email',
-    conditionType: '',
+    comparor: '',
     condition1: '',
     condition2: ''
   };
@@ -60,7 +60,7 @@ export const PredicateWrapper = () => {
         <AddCondition addCondition={addCondition} />
         <SearchButton conditions={conditions} setSql={setSql} />
       </div>
-      <div className="font-mono mt-2 text-center">{sql}</div>
+      <div className="font-mono mt-2 text-center px-20">{sql}</div>
     </>
   );
 };

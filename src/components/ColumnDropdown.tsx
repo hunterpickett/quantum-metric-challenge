@@ -27,7 +27,7 @@ const ColumnDropdown: React.SFC<IProps> = props => {
   return (
     <>
       <select
-        className="h-10 bg-grey-light text-grey-darkest rounded-sm border border-grey"
+        className="h-10 bg-grey-lighter text-grey-darkest rounded-sm border border-grey"
         value={selectedPredicate}
         onChange={handleColumnChange}
       >

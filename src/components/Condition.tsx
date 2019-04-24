@@ -14,7 +14,7 @@ const Condition: React.SFC<IProps> = props => {
     <input
       type={comparor}
       className={`${className} ${comparor === 'number' &&
-        'text-right'} px-2 h-10 w-32 bg-grey-light border border-grey`}
+        'text-right'} px-2 h-10 w-32 bg-grey-lighter border border-grey`}
       value={selectedValue}
       onChange={handleSelectedValueChange}
     />

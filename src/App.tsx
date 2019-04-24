@@ -5,7 +5,7 @@ import { PredicateWrapper } from './components/PredicateWrapper';
 
 export const App = () => {
   return (
-    <div className="bg-grey-lightest">
+    <div className="">
       <div className="mx-3">
         <Header />
         <PredicateWrapper />

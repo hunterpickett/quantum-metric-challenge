@@ -1,4 +1,4 @@
-import React, { useState, useEffect, SetStateAction, Dispatch } from 'react';
+import React from 'react';
 import ComparorDropdown from './ComparorDropdown';
 import Condition from './Condition';
 import WordBlock from './WordBlock';
@@ -55,7 +55,8 @@ export const PredicateBuilder: React.FC<IProps> = props => {
     setCondition({ ...props.condition, condition2: e.currentTarget.value });
   };
 
-  const comparorType = predicates[condition.column] && predicates[condition.column].type;
+  const comparorType =
+    condition.comparor === 'in list' ? 'string' : predicates[condition.column] && predicates[condition.column].type;
   const isBlockWords = ['in list', 'between', 'greater than', 'less than'];
   const andBlockWords = ['between'];
   return (
