@@ -767,6 +767,10 @@ table {
   background-color: #eff8ff;
 }
 
+.bg-blue-quantum {
+  background-color: #03a0d4;
+}
+
 .bg-indigo-darkest {
   background-color: #191e38;
 }
@@ -1059,6 +1063,10 @@ table {
   background-color: #eff8ff;
 }
 
+.hover\:bg-blue-quantum:hover {
+  background-color: #03a0d4;
+}
+
 .hover\:bg-indigo-darkest:hover {
   background-color: #191e38;
 }
@@ -1349,6 +1357,10 @@ table {
 
 .focus\:bg-blue-lightest:focus {
   background-color: #eff8ff;
+}
+
+.focus\:bg-blue-quantum:focus {
+  background-color: #03a0d4;
 }
 
 .focus\:bg-indigo-darkest:focus {
@@ -1715,6 +1727,10 @@ table {
   border-color: #eff8ff;
 }
 
+.border-blue-quantum {
+  border-color: #03a0d4;
+}
+
 .border-indigo-darkest {
   border-color: #191e38;
 }
@@ -2007,6 +2023,10 @@ table {
   border-color: #eff8ff;
 }
 
+.hover\:border-blue-quantum:hover {
+  border-color: #03a0d4;
+}
+
 .hover\:border-indigo-darkest:hover {
   border-color: #191e38;
 }
@@ -2297,6 +2317,10 @@ table {
 
 .focus\:border-blue-lightest:focus {
   border-color: #eff8ff;
+}
+
+.focus\:border-blue-quantum:focus {
+  border-color: #03a0d4;
 }
 
 .focus\:border-indigo-darkest:focus {
@@ -5079,6 +5103,10 @@ table {
   color: #eff8ff;
 }
 
+.text-blue-quantum {
+  color: #03a0d4;
+}
+
 .text-indigo-darkest {
   color: #191e38;
 }
@@ -5371,6 +5399,10 @@ table {
   color: #eff8ff;
 }
 
+.hover\:text-blue-quantum:hover {
+  color: #03a0d4;
+}
+
 .hover\:text-indigo-darkest:hover {
   color: #191e38;
 }
@@ -5661,6 +5693,10 @@ table {
 
 .focus\:text-blue-lightest:focus {
   color: #eff8ff;
+}
+
+.focus\:text-blue-quantum:focus {
+  color: #03a0d4;
 }
 
 .focus\:text-indigo-darkest:focus {
@@ -6389,6 +6425,10 @@ table {
     background-color: #eff8ff;
   }
 
+  .sm\:bg-blue-quantum {
+    background-color: #03a0d4;
+  }
+
   .sm\:bg-indigo-darkest {
     background-color: #191e38;
   }
@@ -6681,6 +6721,10 @@ table {
     background-color: #eff8ff;
   }
 
+  .sm\:hover\:bg-blue-quantum:hover {
+    background-color: #03a0d4;
+  }
+
   .sm\:hover\:bg-indigo-darkest:hover {
     background-color: #191e38;
   }
@@ -6971,6 +7015,10 @@ table {
 
   .sm\:focus\:bg-blue-lightest:focus {
     background-color: #eff8ff;
+  }
+
+  .sm\:focus\:bg-blue-quantum:focus {
+    background-color: #03a0d4;
   }
 
   .sm\:focus\:bg-indigo-darkest:focus {
@@ -7329,6 +7377,10 @@ table {
     border-color: #eff8ff;
   }
 
+  .sm\:border-blue-quantum {
+    border-color: #03a0d4;
+  }
+
   .sm\:border-indigo-darkest {
     border-color: #191e38;
   }
@@ -7621,6 +7673,10 @@ table {
     border-color: #eff8ff;
   }
 
+  .sm\:hover\:border-blue-quantum:hover {
+    border-color: #03a0d4;
+  }
+
   .sm\:hover\:border-indigo-darkest:hover {
     border-color: #191e38;
   }
@@ -7911,6 +7967,10 @@ table {
 
   .sm\:focus\:border-blue-lightest:focus {
     border-color: #eff8ff;
+  }
+
+  .sm\:focus\:border-blue-quantum:focus {
+    border-color: #03a0d4;
   }
 
   .sm\:focus\:border-indigo-darkest:focus {
@@ -10677,6 +10737,10 @@ table {
     color: #eff8ff;
   }
 
+  .sm\:text-blue-quantum {
+    color: #03a0d4;
+  }
+
   .sm\:text-indigo-darkest {
     color: #191e38;
   }
@@ -10969,6 +11033,10 @@ table {
     color: #eff8ff;
   }
 
+  .sm\:hover\:text-blue-quantum:hover {
+    color: #03a0d4;
+  }
+
   .sm\:hover\:text-indigo-darkest:hover {
     color: #191e38;
   }
@@ -11259,6 +11327,10 @@ table {
 
   .sm\:focus\:text-blue-lightest:focus {
     color: #eff8ff;
+  }
+
+  .sm\:focus\:text-blue-quantum:focus {
+    color: #03a0d4;
   }
 
   .sm\:focus\:text-indigo-darkest:focus {
@@ -11988,6 +12060,10 @@ table {
     background-color: #eff8ff;
   }
 
+  .md\:bg-blue-quantum {
+    background-color: #03a0d4;
+  }
+
   .md\:bg-indigo-darkest {
     background-color: #191e38;
   }
@@ -12280,6 +12356,10 @@ table {
     background-color: #eff8ff;
   }
 
+  .md\:hover\:bg-blue-quantum:hover {
+    background-color: #03a0d4;
+  }
+
   .md\:hover\:bg-indigo-darkest:hover {
     background-color: #191e38;
   }
@@ -12570,6 +12650,10 @@ table {
 
   .md\:focus\:bg-blue-lightest:focus {
     background-color: #eff8ff;
+  }
+
+  .md\:focus\:bg-blue-quantum:focus {
+    background-color: #03a0d4;
   }
 
   .md\:focus\:bg-indigo-darkest:focus {
@@ -12928,6 +13012,10 @@ table {
     border-color: #eff8ff;
   }
 
+  .md\:border-blue-quantum {
+    border-color: #03a0d4;
+  }
+
   .md\:border-indigo-darkest {
     border-color: #191e38;
   }
@@ -13220,6 +13308,10 @@ table {
     border-color: #eff8ff;
   }
 
+  .md\:hover\:border-blue-quantum:hover {
+    border-color: #03a0d4;
+  }
+
   .md\:hover\:border-indigo-darkest:hover {
     border-color: #191e38;
   }
@@ -13510,6 +13602,10 @@ table {
 
   .md\:focus\:border-blue-lightest:focus {
     border-color: #eff8ff;
+  }
+
+  .md\:focus\:border-blue-quantum:focus {
+    border-color: #03a0d4;
   }
 
   .md\:focus\:border-indigo-darkest:focus {
@@ -16276,6 +16372,10 @@ table {
     color: #eff8ff;
   }
 
+  .md\:text-blue-quantum {
+    color: #03a0d4;
+  }
+
   .md\:text-indigo-darkest {
     color: #191e38;
   }
@@ -16568,6 +16668,10 @@ table {
     color: #eff8ff;
   }
 
+  .md\:hover\:text-blue-quantum:hover {
+    color: #03a0d4;
+  }
+
   .md\:hover\:text-indigo-darkest:hover {
     color: #191e38;
   }
@@ -16858,6 +16962,10 @@ table {
 
   .md\:focus\:text-blue-lightest:focus {
     color: #eff8ff;
+  }
+
+  .md\:focus\:text-blue-quantum:focus {
+    color: #03a0d4;
   }
 
   .md\:focus\:text-indigo-darkest:focus {
@@ -17587,6 +17695,10 @@ table {
     background-color: #eff8ff;
   }
 
+  .lg\:bg-blue-quantum {
+    background-color: #03a0d4;
+  }
+
   .lg\:bg-indigo-darkest {
     background-color: #191e38;
   }
@@ -17879,6 +17991,10 @@ table {
     background-color: #eff8ff;
   }
 
+  .lg\:hover\:bg-blue-quantum:hover {
+    background-color: #03a0d4;
+  }
+
   .lg\:hover\:bg-indigo-darkest:hover {
     background-color: #191e38;
   }
@@ -18169,6 +18285,10 @@ table {
 
   .lg\:focus\:bg-blue-lightest:focus {
     background-color: #eff8ff;
+  }
+
+  .lg\:focus\:bg-blue-quantum:focus {
+    background-color: #03a0d4;
   }
 
   .lg\:focus\:bg-indigo-darkest:focus {
@@ -18527,6 +18647,10 @@ table {
     border-color: #eff8ff;
   }
 
+  .lg\:border-blue-quantum {
+    border-color: #03a0d4;
+  }
+
   .lg\:border-indigo-darkest {
     border-color: #191e38;
   }
@@ -18819,6 +18943,10 @@ table {
     border-color: #eff8ff;
   }
 
+  .lg\:hover\:border-blue-quantum:hover {
+    border-color: #03a0d4;
+  }
+
   .lg\:hover\:border-indigo-darkest:hover {
     border-color: #191e38;
   }
@@ -19109,6 +19237,10 @@ table {
 
   .lg\:focus\:border-blue-lightest:focus {
     border-color: #eff8ff;
+  }
+
+  .lg\:focus\:border-blue-quantum:focus {
+    border-color: #03a0d4;
   }
 
   .lg\:focus\:border-indigo-darkest:focus {
@@ -21875,6 +22007,10 @@ table {
     color: #eff8ff;
   }
 
+  .lg\:text-blue-quantum {
+    color: #03a0d4;
+  }
+
   .lg\:text-indigo-darkest {
     color: #191e38;
   }
@@ -22167,6 +22303,10 @@ table {
     color: #eff8ff;
   }
 
+  .lg\:hover\:text-blue-quantum:hover {
+    color: #03a0d4;
+  }
+
   .lg\:hover\:text-indigo-darkest:hover {
     color: #191e38;
   }
@@ -22457,6 +22597,10 @@ table {
 
   .lg\:focus\:text-blue-lightest:focus {
     color: #eff8ff;
+  }
+
+  .lg\:focus\:text-blue-quantum:focus {
+    color: #03a0d4;
   }
 
   .lg\:focus\:text-indigo-darkest:focus {
@@ -23186,6 +23330,10 @@ table {
     background-color: #eff8ff;
   }
 
+  .xl\:bg-blue-quantum {
+    background-color: #03a0d4;
+  }
+
   .xl\:bg-indigo-darkest {
     background-color: #191e38;
   }
@@ -23478,6 +23626,10 @@ table {
     background-color: #eff8ff;
   }
 
+  .xl\:hover\:bg-blue-quantum:hover {
+    background-color: #03a0d4;
+  }
+
   .xl\:hover\:bg-indigo-darkest:hover {
     background-color: #191e38;
   }
@@ -23768,6 +23920,10 @@ table {
 
   .xl\:focus\:bg-blue-lightest:focus {
     background-color: #eff8ff;
+  }
+
+  .xl\:focus\:bg-blue-quantum:focus {
+    background-color: #03a0d4;
   }
 
   .xl\:focus\:bg-indigo-darkest:focus {
@@ -24126,6 +24282,10 @@ table {
     border-color: #eff8ff;
   }
 
+  .xl\:border-blue-quantum {
+    border-color: #03a0d4;
+  }
+
   .xl\:border-indigo-darkest {
     border-color: #191e38;
   }
@@ -24418,6 +24578,10 @@ table {
     border-color: #eff8ff;
   }
 
+  .xl\:hover\:border-blue-quantum:hover {
+    border-color: #03a0d4;
+  }
+
   .xl\:hover\:border-indigo-darkest:hover {
     border-color: #191e38;
   }
@@ -24708,6 +24872,10 @@ table {
 
   .xl\:focus\:border-blue-lightest:focus {
     border-color: #eff8ff;
+  }
+
+  .xl\:focus\:border-blue-quantum:focus {
+    border-color: #03a0d4;
   }
 
   .xl\:focus\:border-indigo-darkest:focus {
@@ -27474,6 +27642,10 @@ table {
     color: #eff8ff;
   }
 
+  .xl\:text-blue-quantum {
+    color: #03a0d4;
+  }
+
   .xl\:text-indigo-darkest {
     color: #191e38;
   }
@@ -27766,6 +27938,10 @@ table {
     color: #eff8ff;
   }
 
+  .xl\:hover\:text-blue-quantum:hover {
+    color: #03a0d4;
+  }
+
   .xl\:hover\:text-indigo-darkest:hover {
     color: #191e38;
   }
@@ -28056,6 +28232,10 @@ table {
 
   .xl\:focus\:text-blue-lightest:focus {
     color: #eff8ff;
+  }
+
+  .xl\:focus\:text-blue-quantum:focus {
+    color: #03a0d4;
   }
 
   .xl\:focus\:text-indigo-darkest:focus {
