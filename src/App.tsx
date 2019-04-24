@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.scss';
 import { Header } from './components/Header';
-import { Footer } from './components/Footer';
 import { PredicateWrapper } from './components/PredicateWrapper';
 
 export const App = () => {
@@ -13,6 +12,6 @@ export const App = () => {
       </div>
     </div>
   );
-}
+};
 
 export default App;

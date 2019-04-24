@@ -1,9 +1,10 @@
 import React, { useState, useEffect, SetStateAction, Dispatch } from 'react';
-import PredicateDropdown from './PredicateDropdown';
 import ComparorDropdown from './ComparorDropdown';
 import Condition from './Condition';
 import WordBlock from './WordBlock';
 import { ICondition } from './PredicateWrapper';
+import ColumnDropdown from './ColumnDropdown';
+import DeleteButton from './DeleteButton';
 
 type PredicateType = 'string' | 'number';
 
@@ -34,14 +35,14 @@ interface IProps {
 export const PredicateBuilder: React.FC<IProps> = props => {
   const { condition, setCondition, disabled } = props;
 
-  const handlePredicateChange = (e: React.FormEvent<HTMLSelectElement>) => {
+  const handleColumnChange = (e: React.FormEvent<HTMLSelectElement>) => {
     if (e.currentTarget.value === undefined) return;
     setCondition({ ...props.condition, column: e.currentTarget.value });
   };
 
   const handleComparorChange = (e: React.FormEvent<HTMLSelectElement>) => {
     if (e.currentTarget.value === undefined) return;
-    setCondition({ ...props.condition, conditionType: e.currentTarget.value });
+    setCondition({ ...props.condition, comparor: e.currentTarget.value });
   };
 
   const handleSelectedConditionChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -59,35 +60,29 @@ export const PredicateBuilder: React.FC<IProps> = props => {
   const andBlockWords = ['between'];
   return (
     <div className="mt-1">
-      <button
-        disabled={disabled}
-        className={`mr-2 py-2 px-4 bg-white ${!disabled ? 'hover:bg-grey' : 'cursor-not-allowed'}`}
-        onClick={() => props.removeRow(props.id)}
-      >
-        -
-      </button>
-      <PredicateDropdown selectedPredicate={condition.column} handlePredicateChange={handlePredicateChange} />
-      {isBlockWords.indexOf(condition.conditionType) !== -1 && <WordBlock word="is" className="ml-2" />}
+      <DeleteButton disabled={disabled} removeRow={() => props.removeRow(props.id)} />
+      <ColumnDropdown selectedPredicate={condition.column} handleColumnChange={handleColumnChange} />
+      {isBlockWords.indexOf(condition.comparor) !== -1 && <WordBlock word="is" className="ml-2" />}
       <ComparorDropdown
         className="ml-2"
-        selectedComparor={condition.conditionType}
+        selectedComparor={condition.comparor}
         handleComparorChange={handleComparorChange}
         comparorType={comparorType}
       />
-      {condition.conditionType && (
+      {condition.comparor && (
         <Condition
           className="ml-2"
-          comparorType={comparorType}
+          comparor={comparorType}
           selectedValue={condition.condition1}
           handleSelectedValueChange={handleSelectedConditionChange}
         />
       )}
-      {andBlockWords.indexOf(condition.conditionType) !== -1 && (
+      {andBlockWords.indexOf(condition.comparor) !== -1 && (
         <>
           <WordBlock className="ml-2" word="and" />
           <Condition
             className="ml-2"
-            comparorType={comparorType}
+            comparor={comparorType}
             selectedValue={condition.condition2}
             handleSelectedValueChange={handleSecondSelectedConditionChange}
           />

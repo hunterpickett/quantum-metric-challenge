@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { PredicateBuilder } from './PredicateBuilder';
+import SearchButton from './SearchButton';
+import AddCondition from './AddCondition';
 
 export interface ICondition {
   id: string;
   column: string;
-  conditionType: string;
+  comparor: string;
   condition1: string | number;
   condition2: string | number;
 }
@@ -35,16 +36,6 @@ export const PredicateWrapper = () => {
     setConditions(newConditions);
   };
 
-  const getSql = () => {
-    axios
-      .post('http://localhost:8080/api/getSql', {
-        conditions
-      })
-      .then((res: any) => {
-        setSql(res.data);
-      });
-  };
-
   const removeRow = (id: string) => {
     let newConditions = conditions;
     newConditions = newConditions.filter(c => c.id !== id);
@@ -66,16 +57,10 @@ export const PredicateWrapper = () => {
             />
           );
         })}
-        <button onClick={addCondition} className="mt-2 bg-blue-quantum py-2 px-4 text-white w-24">
-          And
-        </button>
+        <AddCondition addCondition={addCondition} />
+        <SearchButton conditions={conditions} setSql={setSql} />
       </div>
       <div className="font-mono mt-2 text-center">{sql}</div>
-      <div className="flex justify-end py-2">
-        <button onClick={getSql} className="px-3 py-2 w-48 bg-blue-quantum rounded-sm text-white">
-          Search
-        </button>
-      </div>
     </>
   );
 };
