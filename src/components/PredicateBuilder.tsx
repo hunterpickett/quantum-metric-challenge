@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PredicateDropdown from './PredicateDropdown';
 import ComparorDropdown from './ComparorDropdown';
 import Condition from './Condition';
 import WordBlock from './WordBlock';
+import { ICondition } from './PredicateWrapper';
 
 type PredicateType = "string" | "number";
 
@@ -22,30 +23,52 @@ interface Predicate {
     type: PredicateType
 }
 
-export const PredicateBuilder = () => {
+interface IProps {
+    id: number;
+    conditions: ICondition[];
+    setConditions: React.Dispatch<React.SetStateAction<ICondition[]>>;
+}
+
+export const PredicateBuilder: React.SFC<IProps> = props => {
 
     const [selectedPredicate, setSelectedPredicate] = useState<string>('User Email');
     const [selectedComparor, setSelectedComparor] = useState<string>('');
     const [selectedCondition, setSelectedCondition] = useState<string | number>('');
     const [selectedSecondCondition, setSelectedSecondCondition] = useState<string | number>('');
 
+    useEffect(() => {
+        setConditions();
+    });
+
+    const setConditions = () => {
+        let condition: ICondition = {
+            column: selectedPredicate,
+            conditionType: selectedComparor,
+            condition1: selectedCondition,
+            condition2: selectedSecondCondition
+        }
+        let newConditions = props.conditions;
+        newConditions[props.id] = condition;
+        props.setConditions(newConditions);
+    }
+
     const handlePredicateChange = (e: React.FormEvent<HTMLSelectElement>) => {
-        if (!e.currentTarget.value) return;
-        setSelectedPredicate(e.currentTarget.value)
+        if (e.currentTarget.value === undefined) return;
+        setSelectedPredicate(e.currentTarget.value);
     }
 
     const handleComparorChange = (e: React.FormEvent<HTMLSelectElement>) => {
-        if (!e.currentTarget.value) return;
+        if (e.currentTarget.value === undefined) return;
         setSelectedComparor(e.currentTarget.value);
     }
 
     const handleSelectedConditionChange = (e: React.FormEvent<HTMLInputElement>) => {
-        if (!e.currentTarget.value) return;
+        if (e.currentTarget.value === undefined) return;
         setSelectedCondition(e.currentTarget.value);
     }
 
     const handleSecondSelectedConditionChange = (e: React.FormEvent<HTMLInputElement>) => {
-        if (!e.currentTarget.value) return;
+        if (e.currentTarget.value === undefined) return;
         setSelectedSecondCondition(e.currentTarget.value);
     }
 
@@ -53,12 +76,12 @@ export const PredicateBuilder = () => {
     const isBlockWords = ["in list", "between", "greater than", "less than"];
     const andBlockWords = ["between"];
     return (
-        <div className="py-3">
+        <div className="mt-1">
             <PredicateDropdown
                 selectedPredicate={selectedPredicate}
                 handlePredicateChange={handlePredicateChange}
             />
-            {isBlockWords.indexOf(selectedComparor) != -1 && <WordBlock word="is" className="ml-2" />}
+            {isBlockWords.indexOf(selectedComparor) !== -1 && <WordBlock word="is" className="ml-2" />}
             <ComparorDropdown
                 className="ml-2"
                 selectedComparor={selectedComparor}
@@ -72,7 +95,7 @@ export const PredicateBuilder = () => {
                     handleSelectedValueChange={handleSelectedConditionChange}
                 />
             }
-            {andBlockWords.indexOf(selectedComparor) != -1 &&
+            {andBlockWords.indexOf(selectedComparor) !== -1 &&
                 <>
                     <WordBlock className="ml-2" word="and" />
                     <Condition

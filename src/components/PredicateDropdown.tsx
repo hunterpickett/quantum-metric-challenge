@@ -26,7 +26,7 @@ const PredicateDropdown: React.SFC<IProps> = props => {
     const { selectedPredicate, handlePredicateChange } = props;
     return (
         <>
-            <select className="h-10 bg-grey-light text-grey-darkest" value={selectedPredicate} onChange={handlePredicateChange}>
+            <select className="h-10 bg-grey-light text-grey-darkest rounded-sm" value={selectedPredicate} onChange={handlePredicateChange}>
                 {Object.keys(predicates).map(p => {
                     return <option key={p}>{p}</option>
                 })}

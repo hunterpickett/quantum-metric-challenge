@@ -1,19 +1,5 @@
 import React from 'react';
 
-const stringComparors: string[] = ["equals", "contains", "starts with", "in list"];
-const numberComparors: string[] = ["equals", "between", "greater than", "less than", "in list"];
-
-type CompareType = "string" | "number";
-
-const getCompareList = (c: CompareType) => {
-    switch (c) {
-        case "string":
-            return stringComparors;
-        case "number":
-            return numberComparors;
-    }
-}
-
 interface IProps {
     className?: string;
     selectedValue: string | number;

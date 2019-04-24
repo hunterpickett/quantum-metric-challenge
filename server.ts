@@ -1,3 +1,5 @@
+import { getSql } from "./sqlTranslator";
+
 const express = require("express");
 const app = express();
 const port = 8080;
@@ -7,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
 app.post('/api/getSql', (req, res) => {
-    let sql = `SELECT * FROM ${req.body.sql}`;
+    let sql = getSql(req.body.conditions);
     res.send(sql);
 });
 
