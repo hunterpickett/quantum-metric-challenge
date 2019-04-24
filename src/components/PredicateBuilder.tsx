@@ -29,34 +29,37 @@ interface IState {
     selectedComparor: string;
 }
 
-export class PredicateBuilder extends React.Component<IProps, IState> {
-    constructor(props: IProps) {
-        super(props);
-        this.state = {
-            selectedPredicate: 'User Email',
-            selectedComparor: ''
-        }
-    }
+export const PredicateBuilder = () => {
 
-    handlePredicateChange = (e: React.FormEvent<HTMLSelectElement>) => {
+    const [selectedPredicate, setSelectedPredicate] = useState('User Email');
+    const [selectedComparor, setSelectedComparor] = useState('');
+
+    const handlePredicateChange = (e: React.FormEvent<HTMLSelectElement>) => {
         if (!e.currentTarget.value) return;
-        this.setState({ selectedPredicate: e.currentTarget.value })
+        setSelectedPredicate(e.currentTarget.value)
     }
 
-    handleComparorChange = (e: React.FormEvent<HTMLSelectElement>) => {
+    const handleComparorChange = (e: React.FormEvent<HTMLSelectElement>) => {
         if (!e.currentTarget.value) return;
-        this.setState({ selectedComparor: e.currentTarget.value })
+        setSelectedComparor(e.currentTarget.value);
     }
 
-    render() {
-        const { selectedPredicate, selectedComparor } = this.state;
-        return (
-            <>
-                <PredicateDropdown selectedPredicate={selectedPredicate} handlePredicateChange={this.handlePredicateChange} />
-                <ComparorDropdown selectedComparor={selectedComparor} handleComparorChange={this.handleComparorChange} comparorType={predicates[selectedPredicate].type} />
-            </>
-        )
-    }
+
+    const comparorType = predicates[selectedPredicate] && predicates[selectedPredicate].type
+    return (
+        <div className="py-3">
+            <PredicateDropdown
+                selectedPredicate={selectedPredicate}
+                handlePredicateChange={handlePredicateChange}
+            />
+            <ComparorDropdown
+                className="ml-2"
+                selectedComparor={selectedComparor}
+                handleComparorChange={handleComparorChange}
+                comparorType={comparorType}
+            />
+        </div>
+    )
 }
 
 

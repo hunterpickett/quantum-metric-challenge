@@ -35,14 +35,15 @@ type CompareType = "string" | "number";
 
 interface IProps {
     comparorType: CompareType
+    className?: string;
     selectedComparor: string;
     handleComparorChange: (e: React.FormEvent<HTMLSelectElement>) => void;
 }
 export const ComparorDropdown: React.SFC<IProps> = props => {
-    const { comparorType, selectedComparor, handleComparorChange } = props;
+    const { comparorType, className, selectedComparor, handleComparorChange } = props;
     let compareList = getCompareList(comparorType);
     return (
-        <select className="h-10 w-24 bg-grey-light" value={selectedComparor} onChange={handleComparorChange}>
+        <select className={`${className} h-10 w-32 bg-grey-light`} value={selectedComparor} onChange={handleComparorChange}>
             {compareList.map(s => {
                 return <option key={s}>{s}</option>
             })}
