@@ -8,3 +8,4 @@ This repository is for the quantum metric code challenge, created with ReactJS +
 50 min Playing around with Hooks to try and do it without classes
 20 min Refactoring to class based components like I'm used to.
 5 min Going back to hooks cause they are nice
+30 min condition and conditional rendering + word blocks
