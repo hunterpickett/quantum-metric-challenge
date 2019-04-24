@@ -9,3 +9,4 @@ This repository is for the quantum metric code challenge, created with ReactJS +
 20 min Refactoring to class based components like I'm used to.
 5 min Going back to hooks cause they are nice
 30 min condition and conditional rendering + word blocks
+45 min sql translator function

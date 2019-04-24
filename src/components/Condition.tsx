@@ -20,7 +20,7 @@ interface IProps {
     handleSelectedValueChange: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
-export const Condition: React.SFC<IProps> = props => {
+const Condition: React.SFC<IProps> = props => {
     const { className, selectedValue, handleSelectedValueChange } = props;
     return (
         <input className={`${className} h-10 w-32 bg-grey-light`} value={selectedValue} onChange={handleSelectedValueChange} />

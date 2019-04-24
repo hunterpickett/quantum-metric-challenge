@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import PredicateDropdown from './PredicateDropdown';
 import ComparorDropdown from './ComparorDropdown';
-import { Condition } from './Condition';
+import Condition from './Condition';
 import WordBlock from './WordBlock';
 
 type PredicateType = "string" | "number";
 
-const predicates: { [key: string]: Predicate; } = {
+export const predicates: { [key: string]: Predicate; } = {
     "User Email": { type: "string" },
     "Screen Width": { type: "number" },
     "Screen Height": { type: "number" },
