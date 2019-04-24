@@ -2975,7 +2975,7 @@ table {
 }
 
 .font-mono {
-  font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-family: Courier New, Menlo, Monaco, Consolas, Liberation Mono, monospace;
 }
 
 .font-hairline {
@@ -8625,7 +8625,7 @@ table {
   }
 
   .sm\:font-mono {
-    font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-family: Courier New, Menlo, Monaco, Consolas, Liberation Mono, monospace;
   }
 
   .sm\:font-hairline {
@@ -14260,7 +14260,7 @@ table {
   }
 
   .md\:font-mono {
-    font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-family: Courier New, Menlo, Monaco, Consolas, Liberation Mono, monospace;
   }
 
   .md\:font-hairline {
@@ -19895,7 +19895,7 @@ table {
   }
 
   .lg\:font-mono {
-    font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-family: Courier New, Menlo, Monaco, Consolas, Liberation Mono, monospace;
   }
 
   .lg\:font-hairline {
@@ -25530,7 +25530,7 @@ table {
   }
 
   .xl\:font-mono {
-    font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-family: Courier New, Menlo, Monaco, Consolas, Liberation Mono, monospace;
   }
 
   .xl\:font-hairline {

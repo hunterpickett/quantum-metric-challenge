@@ -18,6 +18,7 @@ interface Predicate {
 
 export const getSql = (conditions: any[]) => {
     let sql = "SELECT * FROM Session WHERE ";
+    conditions.filter(c => c.condition1 !== '')
     console.log(conditions);
     for (var i = 0; i < conditions.length; i++) {
         if (i > 0) sql += " AND ";
@@ -66,7 +67,7 @@ const getWhereClause = (con: Condition) => {
             break;
         }
         case "in list": {
-            let inClause;
+            let inClause = condition1;
             if (predicates[column].type === "string") {
                 inClause = (condition1 as string).split(',').map(c => c = `'${c}'`).join(',');
             }

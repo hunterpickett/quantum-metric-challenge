@@ -4,6 +4,7 @@ import ComparorDropdown from './ComparorDropdown';
 import Condition from './Condition';
 import WordBlock from './WordBlock';
 import { ICondition } from './PredicateWrapper';
+import { conditionalExpression } from '@babel/types';
 
 type PredicateType = "string" | "number";
 
@@ -27,6 +28,7 @@ interface IProps {
     id: number;
     conditions: ICondition[];
     setConditions: React.Dispatch<React.SetStateAction<ICondition[]>>;
+    removeRow: (id: number) => void;
 }
 
 export const PredicateBuilder: React.SFC<IProps> = props => {
@@ -75,8 +77,10 @@ export const PredicateBuilder: React.SFC<IProps> = props => {
     const comparorType = predicates[selectedPredicate] && predicates[selectedPredicate].type
     const isBlockWords = ["in list", "between", "greater than", "less than"];
     const andBlockWords = ["between"];
+    const disabled = props.conditions && props.conditions.length <= 1;
     return (
         <div className="mt-1">
+            <button disabled={disabled} className={`mr-2 py-2 px-4 bg-white ${!disabled ? 'hover:bg-grey' : 'cursor-not-allowed'}`} onClick={() => props.removeRow(props.id)}>-</button>
             <PredicateDropdown
                 selectedPredicate={selectedPredicate}
                 handlePredicateChange={handlePredicateChange}
@@ -88,24 +92,28 @@ export const PredicateBuilder: React.SFC<IProps> = props => {
                 handleComparorChange={handleComparorChange}
                 comparorType={comparorType}
             />
-            {selectedComparor &&
+            {
+                selectedComparor &&
                 <Condition
                     className="ml-2"
+                    comparorType={comparorType}
                     selectedValue={selectedCondition}
                     handleSelectedValueChange={handleSelectedConditionChange}
                 />
             }
-            {andBlockWords.indexOf(selectedComparor) !== -1 &&
+            {
+                andBlockWords.indexOf(selectedComparor) !== -1 &&
                 <>
                     <WordBlock className="ml-2" word="and" />
                     <Condition
                         className="ml-2"
+                        comparorType={comparorType}
                         selectedValue={selectedSecondCondition}
                         handleSelectedValueChange={handleSecondSelectedConditionChange}
                     />
                 </>
             }
-        </div>
+        </div >
     )
 }
 

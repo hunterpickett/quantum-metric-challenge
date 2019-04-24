@@ -222,11 +222,11 @@ module.exports = {
       'serif',
     ],
     'mono': [
+      'Courier New',
       'Menlo',
       'Monaco',
       'Consolas',
       'Liberation Mono',
-      'Courier New',
       'monospace',
     ],
   },
