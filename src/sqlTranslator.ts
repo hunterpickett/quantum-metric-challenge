@@ -14,30 +14,43 @@ interface Condition {
     condition2: string | number;
 }
 
+const columnMap: { [key: string]: string } = {
+    "User Email": "user_email",
+    "Screen Width": "screen_width",
+    "Screen Height": "screen_height",
+    "# of Visits": "visits",
+    "First Name": "user_first_name",
+    "Last Name": "user_last_name",
+    "Page Response time (ms)": "page_response",
+    "Domain": "domain",
+    "Page Path": "path"
+}
+
 const getWhereClause = (con: Condition) => {
     const { column, conditionType, condition1, condition2 } = con;
+    let sqlColumn = columnMap[column];
     let whereClause = "AND ";
     switch (conditionType) {
         case "greater than":
-            whereClause += `${column} > ${condition1}`
+            whereClause += `${sqlColumn} > ${condition1}`
         case "less than":
-            whereClause += `${column} < ${condition1}`
+            whereClause += `${sqlColumn} < ${condition1}`
         case "between":
-            whereClause += `${column} > ${condition1} AND ${column} < ${condition2}`
+            whereClause += `${sqlColumn} > ${condition1} AND ${sqlColumn} < ${condition2}`
         case "contains":
-            whereClause += `${column} like '%${condition1}%'`;
+            whereClause += `${sqlColumn} like '%${condition1}%'`;
         case "starts with":
-            whereClause += `${column} like '${condition1}%'`;
+            whereClause += `${sqlColumn} like '${condition1}%'`;
         case "equals": {
             if (predicates[column].type === "string") con.condition1 = `'${condition1}'`;
-            whereClause += `${column} like '${condition1}%'`;
+            whereClause += `${sqlColumn} like '${condition1}%'`;
         }
         case "in list": {
             let inClause;
             if (predicates[column].type === "string") {
                 inClause = (condition1 as string).split(',').map(c => c = `'${c}'`).join(',');
             }
-            whereClause += `${column} IN (${inClause})`;
+            whereClause += `${sqlColumn} IN (${inClause})`;
         }
             return whereClause;
     }
