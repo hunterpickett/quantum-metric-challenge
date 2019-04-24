@@ -21,12 +21,12 @@ interface IProps {
     handleComparorChange: (e: React.FormEvent<HTMLSelectElement>) => void;
 }
 
-export const ComparorDropdown: React.SFC<IProps> = props => {
+export const Condition: React.SFC<IProps> = props => {
     const { comparorType, className, selectedComparor, handleComparorChange } = props;
     let compareList = getCompareList(comparorType);
     console.log(selectedComparor);
     return (
-        <select className={`${className} h-10 w-32 bg-grey-light text-grey-darkest`} value={selectedComparor} onChange={handleComparorChange}>
+        <select className={`${className} h-10 w-32 bg-grey-light`} value={selectedComparor} onChange={handleComparorChange}>
             <option label=" "></option>
             {compareList.map(s => {
                 return <option key={s}>{s}</option>
@@ -35,4 +35,4 @@ export const ComparorDropdown: React.SFC<IProps> = props => {
     )
 }
 
-export default ComparorDropdown;
+export default Condition;

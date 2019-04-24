@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { PredicateDropdown } from './PredicateDropdown';
-import { ComparorDropdown } from './ComparorDropdown';
+import PredicateDropdown from './PredicateDropdown';
+import ComparorDropdown from './ComparorDropdown';
+import { Condition } from './Condition';
+import WordBlock from './WordBlock';
 
 type PredicateType = "string" | "number";
 
@@ -20,19 +22,10 @@ interface Predicate {
     type: PredicateType
 }
 
-interface IProps {
-
-}
-
-interface IState {
-    selectedPredicate: string;
-    selectedComparor: string;
-}
-
 export const PredicateBuilder = () => {
 
-    const [selectedPredicate, setSelectedPredicate] = useState('User Email');
-    const [selectedComparor, setSelectedComparor] = useState('');
+    const [selectedPredicate, setSelectedPredicate] = useState<string>('User Email');
+    const [selectedComparor, setSelectedComparor] = useState<string>('');
 
     const handlePredicateChange = (e: React.FormEvent<HTMLSelectElement>) => {
         if (!e.currentTarget.value) return;
@@ -52,12 +45,22 @@ export const PredicateBuilder = () => {
                 selectedPredicate={selectedPredicate}
                 handlePredicateChange={handlePredicateChange}
             />
+            <WordBlock word="is" className="ml-2" />
             <ComparorDropdown
                 className="ml-2"
                 selectedComparor={selectedComparor}
                 handleComparorChange={handleComparorChange}
                 comparorType={comparorType}
             />
+            <WordBlock word="and" className="ml-2" />
+            {selectedComparor &&
+                <Condition
+                    className="ml-2"
+                    selectedComparor={selectedComparor}
+                    handleComparorChange={handleComparorChange}
+                    comparorType={comparorType}
+                />
+            }
         </div>
     )
 }
