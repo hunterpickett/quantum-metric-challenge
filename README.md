@@ -1,13 +1,10 @@
-### Quantum Metric Code Challenge
+# Quantum Metric Code Challenge
 
 This repository is for the quantum metric code challenge, created with ReactJS + Node.
 
-30 min Github / Create-React-App Setup and Typescript addition
-45 min Messing around with express for the first time and getting a post request to work.
-40 min Tailwind addition + Initial Setup of Header and Footer w/ styling
-50 min Playing around with Hooks to try and do it without classes
-20 min Refactoring to class based components like I'm used to.
-5 min Going back to hooks cause they are nice
-30 min condition and conditional rendering + word blocks
-1hr 15 min sql translator function
-45 min getting everything put together, api CORS headers, api on react side.
+## Total time spent on various parts
+
+-Setup: 1hr 30min (Express, TailwindCSS, Create-React-App, Typescript, Dependencies)
+-React Coding: 4hr (Includes styling)
+-Express Coding: 1hr 30min (Sql translator function + api routing setup)
+-Total: 6hr
