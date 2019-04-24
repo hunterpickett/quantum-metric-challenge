@@ -14,29 +14,31 @@ interface Condition {
     condition2: string | number;
 }
 
-const getWhereClause = (condition: Condition) => {
+const getWhereClause = (con: Condition) => {
+    const { column, conditionType, condition1, condition2 } = con;
     let whereClause = "AND ";
-    switch (condition.conditionType) {
+    switch (conditionType) {
         case "greater than":
-            whereClause += `${condition.column} > ${condition.condition1}`
+            whereClause += `${column} > ${condition1}`
         case "less than":
-            whereClause += `${condition.column} < ${condition.condition1}`
+            whereClause += `${column} < ${condition1}`
         case "between":
-            whereClause += `${condition.column} > ${condition.condition1} AND ${condition.column} < ${condition.condition2}`
+            whereClause += `${column} > ${condition1} AND ${column} < ${condition2}`
         case "contains":
-            whereClause += `${condition.column} like '%${condition.condition1}%'`;
+            whereClause += `${column} like '%${condition1}%'`;
         case "starts with":
-            whereClause += `${condition.column} like '${condition.condition1}%'`;
+            whereClause += `${column} like '${condition1}%'`;
         case "equals": {
-            if (predicates[condition.column].type === "string") condition.condition1 = `'${condition.condition1}'`;
-            whereClause += `${condition.column} like '${condition.condition1}%'`;
+            if (predicates[column].type === "string") con.condition1 = `'${condition1}'`;
+            whereClause += `${column} like '${condition1}%'`;
         }
         case "in list": {
             let inClause;
-            if (predicates[condition.column].type === "string") {
-                inClause = (condition.condition1 as string).split(',').map(c => c = `'${c}'`).join(',');
+            if (predicates[column].type === "string") {
+                inClause = (condition1 as string).split(',').map(c => c = `'${c}'`).join(',');
             }
-            whereClause += `${condition.column} IN (${inClause})`;
+            whereClause += `${column} IN (${inClause})`;
         }
+            return whereClause;
     }
 };
